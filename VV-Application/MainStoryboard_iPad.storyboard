@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--Homescreen View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="HomescreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" id="JKO-Ec-7uL">
+                                <rect key="frame" x="0.0" y="44" width="270" height="250"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="8tR-sE-6kw">
+                                <rect key="frame" x="273" y="44" width="750" height="384"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ghp-PW-MPO">
+                                <rect key="frame" x="0.0" y="660" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="About/Credits" id="2Cs-xa-UjP">
+                                        <connections>
+                                            <segue destination="ymn-7K-OlU" kind="modal" identifier="HomeToAbout" id="xEx-tx-5VH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" id="nVb-Do-hz5">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="VV - Home Screen" id="htE-Gj-6jM">
+                                        <barButtonItem key="rightBarButtonItem" title="Search" id="k4l-cC-XLf">
+                                            <connections>
+                                                <action selector="insulaSearch:" destination="2" id="4dz-Wd-Awz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" id="Px0-dF-prm">
+                                <rect key="frame" x="679" y="0.0" width="275" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" keyboardType="alphabet"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="LwP-pi-Ley"/>
+                                </connections>
+                            </searchBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="7Gw-qP-uux">
+                                <rect key="frame" x="491" y="502" width="513" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Ecg-0e-gTf">
+                                <rect key="frame" x="323" y="462" width="633" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="M7e-Ve-Av4">
+                                <rect key="frame" x="754" y="614" width="250" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4Jl-kq-jZQ" kind="modal" identifier="HomeToInsula" id="ygA-ac-g2y"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fdz-AI-g3E">
+                                <rect key="frame" x="0.0" y="296" width="270" height="364"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell 1" id="GKO-Ua-kLu">
+                                        <rect key="frame" x="0.0" y="34" width="270" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="250" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <accessibility key="accessibilityConfiguration" label="Cell 1"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="lnI-yd-69c"/>
+                                    <outlet property="delegate" destination="2" id="ktG-cv-Ibi"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" id="W8A-bV-uN6">
+                                <rect key="frame" x="300" y="502" width="165" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94184806659999998" green="0.96862745100000003" blue="0.95772862510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="HSButton" destination="M7e-Ve-Av4" id="3qh-zs-OmM"/>
+                        <outlet property="HSGeneralImage" destination="JKO-Ec-7uL" id="qFP-mY-Vhc"/>
+                        <outlet property="HSMapView" destination="8tR-sE-6kw" id="Uhe-IR-97t"/>
+                        <outlet property="HSSearchBar" destination="Px0-dF-prm" id="g2Y-n6-G3n"/>
+                        <outlet property="HSSlider" destination="Ecg-0e-gTf" id="PQz-YJ-jFq"/>
+                        <outlet property="HSSummary" destination="7Gw-qP-uux" id="a52-fu-ZYS"/>
+                        <outlet property="HSTableView" destination="fdz-AI-g3E" id="KIG-8c-lM8"/>
+                        <outlet property="insulaImage" destination="W8A-bV-uN6" id="0pn-hJ-0Uh"/>
+                        <outlet property="searchDisplayController" destination="bar-O9-pOr" id="Yyz-Xx-0pa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="bar-O9-pOr">
+                    <connections>
+                        <outlet property="delegate" destination="2" id="afj-2x-XuP"/>
+                        <outlet property="searchContentsController" destination="2" id="N3J-1c-STH"/>
+                        <outlet property="searchResultsDataSource" destination="2" id="gga-Xt-r9t"/>
+                        <outlet property="searchResultsDelegate" destination="2" id="aa1-AD-txX"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-1168" y="-195"/>
+        </scene>
+        <!--Insula View Controller-->
+        <scene sceneID="Oaa-dp-oK1">
+            <objects>
+                <viewController id="4Jl-kq-jZQ" customClass="InsulaViewController" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="PGF-0a-x36">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="mgd-Di-j1Z">
+                                <rect key="frame" x="0.0" y="44" width="269" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="1IY-0D-rsy">
+                                <rect key="frame" x="277" y="44" width="747" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2ZV-lr-yLL">
+                                <rect key="frame" x="0.0" y="297" width="270" height="407"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell 1" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell 1" id="mwV-Ok-k4a">
+                                        <rect key="frame" x="0.0" y="34" width="270" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="250" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Jl-kq-jZQ" id="CzC-Py-kOY"/>
+                                    <outlet property="delegate" destination="4Jl-kq-jZQ" id="4yN-q9-uny"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="o8u-Lv-gtq">
+                                <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" id="EPN-MI-LUq">
+                                        <connections>
+                                            <segue destination="2" kind="modal" identifier="InsulaToHome" id="44L-Qm-mBa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" id="Z3R-SP-Ha5">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="VV - Insula Name" id="k4e-ea-q2B">
+                                        <barButtonItem key="rightBarButtonItem" title="Search" id="zfm-MQ-7xr">
+                                            <connections>
+                                                <action selector="landmarkSearch:" destination="4Jl-kq-jZQ" id="zME-Wf-HHp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" id="0o2-gb-6N9">
+                                <rect key="frame" x="678.5" y="0.0" width="275" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="waT-mm-uFV">
+                                <rect key="frame" x="488" y="513" width="526" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="y1F-Xn-4hu">
+                                <rect key="frame" x="308" y="475" width="675" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4bi-p6-hY7">
+                                <rect key="frame" x="488" y="648" width="526" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jea-Ud-xDz" kind="modal" id="C9b-Hx-aqX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" id="wbO-ab-8t2">
+                                <rect key="frame" x="290" y="513" width="182" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="IVButton" destination="4bi-p6-hY7" id="fCV-e3-vzb"/>
+                        <outlet property="IVGeneralImage" destination="mgd-Di-j1Z" id="rud-qT-0z3"/>
+                        <outlet property="IVMapView" destination="1IY-0D-rsy" id="jjz-h2-AII"/>
+                        <outlet property="IVSearchBar" destination="0o2-gb-6N9" id="bpf-2L-sPB"/>
+                        <outlet property="IVSlider" destination="y1F-Xn-4hu" id="y7t-Sk-feM"/>
+                        <outlet property="IVSummary" destination="waT-mm-uFV" id="H6p-kR-YGX"/>
+                        <outlet property="IVTableView" destination="2ZV-lr-yLL" id="9T0-hM-PnU"/>
+                        <outlet property="landmarkImage" destination="wbO-ab-8t2" id="Cp6-Sz-eDg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVE-Y2-R9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="-527"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UWp-AX-B08">
+            <objects>
+                <viewController id="ymn-7K-OlU" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1sE-8x-fDT">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" id="Ehd-a7-nUk">
+                                <rect key="frame" x="252" y="44" width="772" height="660"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" id="7oY-Cf-ijj">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="VV-About/Credits" id="ZpG-lt-HPN"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="HpW-Z3-XMW">
+                                <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" id="p0C-th-8cy">
+                                        <connections>
+                                            <segue destination="2" kind="modal" identifier="AboutToHome" id="oNM-4i-GQz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="IHU-zK-WEP">
+                                <rect key="frame" x="-12.5" y="44" width="265" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OrT-ds-pJM"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="imageView" destination="IHU-zK-WEP" id="ZXH-xe-qF0"/>
+                        <outlet property="textView" destination="Ehd-a7-nUk" id="nR3-0D-SBf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3pZ-H3-A1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="322"/>
+        </scene>
+        <!--Landmark View Controller-->
+        <scene sceneID="fhS-61-hQK">
+            <objects>
+                <viewController id="uon-Db-xCE" customClass="LandmarkViewController" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wQk-p7-bg6">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="V3n-1U-AnC">
+                                <rect key="frame" x="379" y="282" width="324" height="247"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" id="EBK-HT-yNW">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="VV - 3D Virtual Space" id="PKf-iN-2di"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6IV-I6-7eZ">
+                                <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" id="lAN-pf-Tru">
+                                        <connections>
+                                            <segue destination="jea-Ud-xDz" kind="modal" identifier="3DToLandmark" id="bwr-V0-23C"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29803921570000003" green="0.40000000000000002" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NFD-ww-92c" appends="YES" id="cEn-Hd-Xgg"/>
+                            <outletCollection property="gestureRecognizers" destination="4T7-zm-GOg" appends="YES" id="khw-KS-OY7"/>
+                        </connections>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zb-dC-C7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="NFD-ww-92c">
+                    <connections>
+                        <action selector="twoFingerRotate:" destination="uon-Db-xCE" id="mwd-pg-B5V"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="4T7-zm-GOg">
+                    <connections>
+                        <action selector="panHorizontal:" destination="uon-Db-xCE" id="Wa5-VG-kly"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2546" y="-577"/>
+        </scene>
+        <!--Intermediate View Controller - Title-->
+        <scene sceneID="O0s-e6-eaQ">
+            <objects>
+                <viewController id="jea-Ud-xDz" customClass="IntermediateViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hQQ-GC-pWR">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="0m7-6y-CfD">
+                                <rect key="frame" x="0.0" y="704" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" id="pJl-N1-IFQ">
+                                        <connections>
+                                            <segue destination="4Jl-kq-jZQ" kind="modal" id="tEh-bX-8JR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="3D Virtual Space" id="tVN-NU-dke">
+                                        <connections>
+                                            <segue destination="uon-Db-xCE" kind="modal" identifier="LandmarkTo3D" id="VXo-nb-P7H"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Rotate View" id="gJS-kt-Bxh">
+                                        <connections>
+                                            <action selector="rotateView:" destination="jea-Ud-xDz" id="G32-ME-lXV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Play Video" id="ZtC-rn-hMx">
+                                        <connections>
+                                            <action selector="playVideo:" destination="jea-Ud-xDz" id="j3y-tv-XFu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="vUs-Si-I4D">
+                                <rect key="frame" x="0.0" y="44" width="1024" height="660"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" id="Nic-cO-8cV">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="VV - Landmark Screen" id="ZEn-AJ-Sao"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="RZi-mN-bu0"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="landmarkImage" destination="vUs-Si-I4D" id="7LY-Tj-xoh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qi5-C8-mjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1318" y="-107"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="44L-Qm-mBa"/>
+        <segue reference="ygA-ac-g2y"/>
+        <segue reference="C9b-Hx-aqX"/>
+    </inferredMetricsTieBreakers>
+</document>

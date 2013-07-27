@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C3012" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Insula" representedClassName="Insula" syncable="YES">
+        <attribute name="insula_annotation_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insula_annotation_picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insula_general_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insula_general_picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insula_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="landmarks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Landmark" syncable="YES"/>
+        <relationship name="timeslots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Timeslot" syncable="YES"/>
+    </entity>
+    <entity name="Intermediate" representedClassName="Intermediate" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="popovers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Popover" syncable="YES"/>
+    </entity>
+    <entity name="Landmark" representedClassName="Landmark" syncable="YES">
+        <attribute name="insula_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_3d" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_annotation_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_annotation_picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_general_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_general_picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_video" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="intermediates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Intermediate" syncable="YES"/>
+        <relationship name="timeslots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Timeslot" syncable="YES"/>
+    </entity>
+    <entity name="Popover" representedClassName="Popover" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Timeslot" representedClassName="Timeslot" syncable="YES">
+        <attribute name="insula_general_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insula_general_picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_general_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landmark_general_picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Insula" positionX="-324" positionY="-396" width="189" height="178"/>
+        <element name="Intermediate" positionX="270" positionY="-270" width="128" height="88"/>
+        <element name="Landmark" positionX="-36" positionY="-388" width="200" height="223"/>
+        <element name="Popover" positionX="439" positionY="-306" width="101" height="133"/>
+        <element name="Timeslot" positionX="-162" positionY="-108" width="189" height="133"/>
+    </elements>
+</model>
